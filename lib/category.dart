@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
+
+import 'package:meta/meta.dart';
+
 import 'package:category_widget/converter_route.dart';
 import 'package:category_widget/unit.dart';
-import 'package:flutter/material.dart';
 
 final _rowHeight = 100.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 2);
@@ -24,8 +27,8 @@ class Category extends StatelessWidget {
         super(key: key);
 
   void _navigateToConverter(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute<Null>(builder: (BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute<Null>(
+      builder: (BuildContext context) {
         return Scaffold(
           appBar: AppBar(
             elevation: 1.0,
@@ -36,10 +39,13 @@ class Category extends StatelessWidget {
             centerTitle: true,
             backgroundColor: color,
           ),
-          body: ConverterRoute(units: units, color: color),
+          body: ConverterRoute(
+            color: color,
+            units: units,
+          ),
         );
-      }),
-    );
+      },
+    ));
   }
 
   @override
@@ -59,17 +65,18 @@ class Category extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Icon(
-                    iconLocation,
-                    size: 60.0,
+                    padding: EdgeInsets.all(16.0),
+                    child: Icon(
+                      iconLocation,
+                      size: 60.0,
+                    )),
+                Center(
+                  child: Text(
+                    name,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                 ),
-                Center(
-                  child: Text(name,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline5),
-                )
               ],
             ),
           ),

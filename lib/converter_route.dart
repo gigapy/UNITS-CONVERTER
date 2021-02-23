@@ -1,25 +1,33 @@
-import 'package:category_widget/unit.dart';
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 
-class ConverterRoute extends StatelessWidget {
+import 'package:category_widget/unit.dart';
+
+class ConverterRoute extends StatefulWidget {
   final Color color;
 
   final List<Unit> units;
 
   const ConverterRoute({
-    @required this.units,
     @required this.color,
-  }) : assert(units != null);
+    @required this.units,
+  })  : assert(color != null),
+        assert(units != null);
 
   @override
+  _ConverterRouteState createState() => _ConverterRouteState();
+}
+
+class _ConverterRouteState extends State<ConverterRoute> {
+  @override
   Widget build(BuildContext context) {
-    final unitWidget = units.map((Unit unit) {
+    final unitWidgets = widget.units.map((Unit unit) {
       return Container(
-        color: color,
+        color: widget.color,
         margin: EdgeInsets.all(8.0),
         padding: EdgeInsets.all(16.0),
         child: Column(
-          children: [
+          children: <Widget>[
             Text(
               unit.name,
               style: Theme.of(context).textTheme.headline5,
@@ -32,6 +40,9 @@ class ConverterRoute extends StatelessWidget {
         ),
       );
     }).toList();
-    return ListView(children: unitWidget);
+
+    return ListView(
+      children: unitWidgets,
+    );
   }
 }
