@@ -1,16 +1,11 @@
-# category_widget
+# UNIT-CONVERTER-APP
 
-A new Flutter project.
 
-## Getting Started
+## Customizations
+ - Style the input/output boxes and dropdowns. Consider colors, border radius, padding, text themes, etc.
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+### 
+<img src='https://raw.githubusercontent.com/flutter/udacity-course/master/course/screenshots/06_input_2.png' width='350'>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

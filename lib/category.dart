@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
+// @required is defined in the meta.dart package
 import 'package:meta/meta.dart';
 
-import 'package:category_widget/converter_route.dart';
-import 'package:category_widget/unit.dart';
+import 'converter_route.dart';
+import 'unit.dart';
 
 final _rowHeight = 100.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 2);
@@ -43,6 +43,7 @@ class Category extends StatelessWidget {
             color: color,
             units: units,
           ),
+          resizeToAvoidBottomInset: false,
         );
       },
     ));
@@ -56,8 +57,8 @@ class Category extends StatelessWidget {
         height: _rowHeight,
         child: InkWell(
           borderRadius: _borderRadius,
-          highlightColor: color,
-          splashColor: color,
+          highlightColor: color['highlight'],
+          splashColor: color['splash'],
           onTap: () => _navigateToConverter(context),
           child: Padding(
             padding: EdgeInsets.all(8.0),
@@ -65,11 +66,12 @@ class Category extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Icon(
-                      iconLocation,
-                      size: 60.0,
-                    )),
+                  padding: EdgeInsets.all(16.0),
+                  child: Icon(
+                    iconLocation,
+                    size: 60.0,
+                  ),
+                ),
                 Center(
                   child: Text(
                     name,
