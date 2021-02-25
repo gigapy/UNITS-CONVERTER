@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'category_route.dart';
 
 void main() {
@@ -17,7 +18,6 @@ class UnitConverterApp extends StatelessWidget {
               displayColor: Colors.grey[600],
             ),
         primaryColor: Colors.grey[500],
-        textSelectionHandleColor: Colors.green[500],
       ),
       home: CategoryRoute(),
     );
