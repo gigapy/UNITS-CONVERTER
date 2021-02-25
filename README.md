@@ -2,7 +2,7 @@
 
 
 ## Customizations
- - Style the input/output boxes and dropdowns. Consider colors, border radius, padding, text themes, etc.
+ - Style the input/output boxes and dropdowns. colors, border radius, padding, text themes, etc.
 
 ## Screenshots
 
